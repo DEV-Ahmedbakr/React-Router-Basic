@@ -1,5 +1,5 @@
 import React,{Component}       from 'react';                      // React to use render() &  Component
-import {BrowserRouter, Route}  from 'react-router-dom';           // BrowserRouter &  Route
+import {BrowserRouter, Route, Switch}  from 'react-router-dom';   // BrowserRouter &  Route & Switch 
 import Navbar                  from './component/Navbar';         // Navbar component 
 import Home                    from './component/Home';           // Home component 
 import Login                   from './component/Login';          // Login component 
@@ -11,10 +11,12 @@ class App extends Component {
    return(
      <BrowserRouter>
       <Navbar />
+     <Switch>
       <Route exact path="/"         component={Home}/>
       <Route       path="/Login"    component={Login}/>
       <Route       path="/Data"     component={Data}/>
       <Route       path="/:Notfound" component={Notfound}/>
+     </Switch>
      </BrowserRouter>
    )
  }
